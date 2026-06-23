@@ -27,17 +27,14 @@ PLATFORM="sd_8550"
 # Stock firmware details for download
 STOCK_MODEL="SM-S911B"
 STOCK_CSC="EUX"
-STOCK_IMEI="352404911234563"
 
 # Source firmware details for download
 MODEL="SM-S911B"
 CSC="EUX"
-IMEI="352404911234563"
 
 # Extra firmware (Optional) details for download
-EXTRA_MODEL=""
-EXTRA_CSC=""
-EXTRA_IMEI=""
+EXTRA_MODEL="SM-S948B"
+EXTRA_CSC="EUX"
 
 # Output
 FILESYSTEM="erofs"

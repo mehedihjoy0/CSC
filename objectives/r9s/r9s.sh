@@ -27,17 +27,14 @@ PLATFORM="ex_2100"
 # Stock firmware details for download
 STOCK_MODEL="SM-G990E"
 STOCK_CSC="THL"
-STOCK_IMEI="355798871234563"
 
 # Source firmware details for download
 MODEL="SM-G990E"
 CSC="THL"
-IMEI="355798871234563"
 
 # Extra firmware (Optional) details for download
-EXTRA_MODEL=""
-EXTRA_CSC=""
-EXTRA_IMEI=""
+EXTRA_MODEL="SM-S948B"
+EXTRA_CSC="EUX"
 
 # Output
 FILESYSTEM="erofs"

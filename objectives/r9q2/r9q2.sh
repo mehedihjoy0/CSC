@@ -27,17 +27,14 @@ PLATFORM="sm8350"
 # Stock firmware details for download
 STOCK_MODEL="SM-G990B2"
 STOCK_CSC="EUX"
-STOCK_IMEI="350370851234560"
 
 # Source firmware details for download
 MODEL="SM-G990B2"
 CSC="EUX"
-IMEI="350370851234560"
 
 # Extra firmware (Optional) details for download
-EXTRA_MODEL=""
-EXTRA_CSC=""
-EXTRA_IMEI=""
+EXTRA_MODEL="SM-S948B"
+EXTRA_CSC="EUX"
 
 # Output
 FILESYSTEM=ext4

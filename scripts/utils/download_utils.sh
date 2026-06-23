@@ -34,11 +34,11 @@ DOWNLOAD_FW() {
     declare -A PROCESSED_MODELS
 
     for CONFIG_ENTRY in \
-        "MAIN|$MODEL|$CSC|$IMEI" \
-        "EXTRA|$EXTRA_MODEL|$EXTRA_CSC|${EXTRA_IMEI:-$IMEI}" \
-        "STOCK|$STOCK_MODEL|$STOCK_CSC|$STOCK_IMEI"
+        "MAIN|$MODEL|$CSC" \
+        "EXTRA|$EXTRA_MODEL|$EXTRA_CSC" \
+        "STOCK|$STOCK_MODEL|$STOCK_CSC"
     do
-        IFS="|" read -r FW_PREFIX DEVICE_MODEL REGION_CODE DEVICE_IMEI <<< "$CONFIG_ENTRY"
+        IFS="|" read -r FW_PREFIX DEVICE_MODEL REGION_CODE <<< "$CONFIG_ENTRY"
 
         [[ -z "$DEVICE_MODEL" || -z "$REGION_CODE" ]] && continue
 
@@ -53,7 +53,6 @@ DOWNLOAD_FW() {
             "$FW_PREFIX" \
             "$DEVICE_MODEL" \
             "$REGION_CODE" \
-            "$DEVICE_IMEI" \
             "$FW_BASE" \
             "$TEMP_DOWNLOAD_DIR"
     done
@@ -66,9 +65,8 @@ FETCH_FW() {
     local FW_PREFIX="$1"
     local DEVICE_MODEL="$2"
     local REGION_CODE="$3"
-    local DEVICE_IMEI="$4"
-    local BASE_DIR="$5"
-    local TEMP_DIR="$6"
+    local BASE_DIR="$4"
+    local TEMP_DIR="$5"
 
     local TARGET_DIR="${BASE_DIR}/${DEVICE_MODEL}_${REGION_CODE}"
     local METADATA_FILE="${TARGET_DIR}/firmware.info"
@@ -139,7 +137,9 @@ FETCH_FW() {
 
     (
         cd "$TEMP_DIR" || exit 1
-        "$PREBUILTS/samfirm/samfirm.js" -m "$DEVICE_MODEL" -r "$REGION_CODE" -i "$DEVICE_IMEI"
+        "$PREBUILTS/samloader/samloader" download --model "$DEVICE_MODEL" --region "$REGION_CODE" -o "firmware.zip"
+        unzip "firmware.zip" -d "$FW_OUTPUT_DIR"
+        rm -f "firmware.zip"
     )
 
     if [[ $? -ne 0 ]]; then

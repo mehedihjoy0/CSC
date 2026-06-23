@@ -27,17 +27,14 @@ PLATFORM="sm8350"
 # Stock firmware details for download
 STOCK_MODEL="SM-F926B"
 STOCK_CSC="EUX"
-STOCK_IMEI="353249141751335"
 
 # Source firmware details for download
 MODEL="SM-F926B"
 CSC="EUX"
-IMEI="353249141751335"
 
 # Extra firmware (Optional) details for download
-EXTRA_MODEL=""
-EXTRA_CSC=""
-EXTRA_IMEI=""
+EXTRA_MODEL="SM-S948B"
+EXTRA_CSC="EUX"
 
 # Output
 FILESYSTEM=ext4

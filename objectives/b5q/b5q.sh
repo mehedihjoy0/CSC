@@ -28,17 +28,14 @@ DEVICE_ACTUAL_MODEL="SM-F731B"
 # Stock firmware details for download
 STOCK_MODEL="SM-F731U1"
 STOCK_CSC="ATT"
-STOCK_IMEI="357459403943704"
 
 # Source firmware details for download
 MODEL="SM-F731U1"
 CSC="ATT"
-IMEI="357459403943704"
 
 # Extra firmware (Optional) details for download
-EXTRA_MODEL=""
-EXTRA_CSC=""
-EXTRA_IMEI=""
+EXTRA_MODEL="SM-S948B"
+EXTRA_CSC="EUX"
 
 # Output
 FILESYSTEM="erofs"
