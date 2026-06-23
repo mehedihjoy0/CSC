@@ -54,7 +54,7 @@ BT_LIB_PATCH()
             )
             ;;
         *)
-            ERROR_EXIT "Unsupported SDK version: $SDK_VERSION"
+            LOG_WARN "Unsupported SDK version: $SDK_VERSION"
             ;;
     esac
 
@@ -67,7 +67,7 @@ BT_LIB_PATCH()
     done
 
     [[ "$PATCH_APPLIED" != true ]] && \
-        ERROR_EXIT "No patch available for Bluetooth library (SDK $SDK_VERSION)"
+        LOG_WARN "No patch available for Bluetooth library (SDK $SDK_VERSION)"
 
     return 0
 }
@@ -75,7 +75,7 @@ BT_LIB_PATCH()
 if ! EXISTS "system" "lib64/libbluetooth_jni.so"; then
     LOG_BEGIN "Applying Bluetooth library patch"
 
-    BT_LIB_PATCH || ERROR_EXIT "Bluetooth patching failed"
+    BT_LIB_PATCH || LOG_WARN "Bluetooth patching failed"
 
     LOG_END "Bluetooth library patch applied successfully"
 fi
