@@ -253,15 +253,15 @@ _BUILD_ROM()
                 cp "$CFG" "$TARGET"
             else
                 while IFS= read -r LINE; do
-
-                    PATH=$(echo "$LINE" | awk '{print $1}')
-                    if [[ -n "$PATH" ]]; then
-                        sed -i "\|^$PATH |d" "$TARGET"
+                    CFG_PATH=$(echo "$LINE" | awk '{print $1}')
+                    if [[ -n "$CFG_PATH" ]]; then
+                        sed -i "\|^$CFG_PATH |d" "$TARGET"
                     fi
                     echo "$LINE" >> "$TARGET"
                 done < "$CFG"
             fi
         done < <(find "$LAYER" -type f \( -name "*_file_contexts" -o -name "*_fs_config" \) -print0)
+
 
         # Sync partitions
         while IFS= read -r -d '' IMG; do
