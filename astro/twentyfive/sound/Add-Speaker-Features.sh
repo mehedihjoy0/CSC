@@ -29,13 +29,13 @@ APPEND_FF_VALUE() {
 
 APPEND_FF_VALUE "AUDIO_CONFIG_SOUNDALIVE_VERSION" "voice_boost"
 
-ADD_FROM_FW "pa3q" "system" "lib64/libvoice_booster.so"
-ADD_FROM_FW "pa3q" "system" "lib64/lib_sag_ai_sound_sep_v1.00.so"
-ADD_FROM_FW "pa3q" "system" "lib64/lib_SAG_EQ_ver2060.so"
-ADD_FROM_FW "pa3q" "system" "lib64/libSAG_VM_Energy_v300.so"
-ADD_FROM_FW "pa3q" "system" "lib64/libSAG_VM_Score_V300.so"
-ADD_FROM_FW "pa3q" "system" "lib64/lib_SoundAlive_play_plus_ver900.so"
-ADD_FROM_FW "pa3q" "system" "etc/audio_effects_common.conf"
+ADD_FROM_FW "extra" "system" "lib64/libvoice_booster.so"
+ADD_FROM_FW "extra" "system" "lib64/lib_sag_ai_sound_sep_v1.00.so"
+ADD_FROM_FW "extra" "system" "lib64/lib_SAG_EQ_ver2060.so"
+ADD_FROM_FW "extra" "system" "lib64/libSAG_VM_Energy_v300.so"
+ADD_FROM_FW "extra" "system" "lib64/libSAG_VM_Score_V300.so"
+ADD_FROM_FW "extra" "system" "lib64/lib_SoundAlive_play_plus_ver900.so"
+ADD_FROM_FW "extra" "system" "etc/audio_effects_common.conf"
 
 echo "/system/lib64/lib_sag_ai_sound_sep_v1.00.so" >> "$WORKSPACE/system/system/etc/irremovable_list.txt"
 

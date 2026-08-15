@@ -51,11 +51,11 @@ else
         LOG_INFO "Device supports SPen, source does not. Adding..."
 
         for pkg in "${AIR_COMMAND_PKGS[@]}"; do
-            ADD_FROM_FW "pa3q" "system" "priv-app/$pkg"
+            ADD_FROM_FW "extra" "system" "priv-app/$pkg"
         done
 
         for file in "${AIR_COMMAND_FILES[@]}"; do
-            ADD_FROM_FW "pa3q" "system" "$file"
+            ADD_FROM_FW "extra" "system" "$file"
         done
 
         FLOATING_FEATURE_LINES

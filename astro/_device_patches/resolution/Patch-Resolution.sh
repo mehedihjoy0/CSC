@@ -13,10 +13,10 @@ if GET_FEATURE DEVICE_HAVE_QHD_PANEL; then
         ADD_PATCH "framework.jar" \
             "$SCRPATH/patches/Enable-QHD-Resolution-Support.sh"
 
-        ADD_FROM_FW "dm3q" "system" "bin/bootanimation"
-        ADD_FROM_FW "dm3q" "system" "bin/surfaceflinger"
+        ADD_FROM_FW "extra" "system" "bin/bootanimation"
+        ADD_FROM_FW "extra" "system" "bin/surfaceflinger"
 
-        ADD_FROM_FW "pa3q" "system" "framework/gamemanager.jar"
+        ADD_FROM_FW "extra" "system" "framework/gamemanager.jar"
         ADD_PATCH "framework.jar" "$SCRPATH/patches/Add-Dynamic-Resolution-Control.sh"
     fi
 else
