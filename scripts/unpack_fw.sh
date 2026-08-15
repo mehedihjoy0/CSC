@@ -85,10 +85,6 @@ EXTRACT_FIRMWARE()
         return 1
     }
 
-    # Github runner have limited 72GB Storage only :(
-    if IS_GITHUB_ACTIONS; then rm -f "$AP_PACKAGE" && rm -rf "$SOURCE_DIR"; fi
-
-
     # Convert sparse to raw as lpunpack cannot take out images from sparse images
     SPARSE_TO_RAW "$SUPER_IMG" \
     || ERROR_EXIT "Sparse conversion failed for super.img"
@@ -171,6 +167,14 @@ EOF
     fi
     # ]
 
+    # Github runner have limited 72GB Storage only :(
+    if IS_GITHUB_ACTIONS; then 
+        rm -f "$AP_PACKAGE"
+        rm -rf "$SOURCE_DIR"
+        rm -f "$SUPER_IMG"
+        find "$WORK_DIR" -maxdepth 1 -type f -name "*.img" -delete
+    fi
+    
     touch "$MARKER_FILE"
     LOG_END "Unpacked $MODEL_NAME firmware ($FOUND_PART_COUNT partitions)."
 }

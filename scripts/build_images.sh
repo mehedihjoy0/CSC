@@ -27,7 +27,19 @@ REPACK_PARTITION()
     local TARGET_FILESYSTEM="$2"
     local OUTPUT_DIR="$3"
     local FIRMWARE_WORK_DIR="$4"
-
+    
+    # Github runner have limited 72GB Storage only :(
+    if IS_GITHUB_ACTIONS; then 
+        rm -rf "SOURCE_FW/vendor"
+        rm -rf "SOURCE_FW/odm"
+        rm -rf "STOCK_FW/system"
+        rm -rf "STOCK_FW/product"
+        rm -rf "EXTRA_FW/system"
+        rm -rf "EXTRA_FW/product"
+        rm -rf "EXTRA_FW/vendor"
+        rm -rf "EXTRA_FW/odm"
+    fi
+    
     [[ ! -d "$FIRMWARE_WORK_DIR/$PARTITION_NAME" ]] && {
         ERROR_EXIT "Partition folder not found in $FIRMWARE_WORK_DIR/$PARTITION_NAME"
     }
@@ -148,5 +160,8 @@ REPACK_PARTITION()
             ERROR_EXIT "Unsupported filesystem: $TARGET_FILESYSTEM"
             ;;
     esac
+    
+    # Delete partition folder after building image successfully
+    rm -rf "$WORKSPACE/$PARTITION_NAME"
 }
 # ]
