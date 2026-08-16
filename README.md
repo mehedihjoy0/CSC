@@ -3,11 +3,15 @@
 
 AstroROM is an independent ROM project designed with a unique approach to firmware modification. Unlike traditional ROM projects, AstroROM automatically adapts and patches any Samsung ROM, regardless of device model or firmware version. Simply match the GitHub branch to your ui version, and AstroROM handles the rest.
 
+## About SpiderGirl OS
+
+SpiderGirl OS is a fork of AstroROM which brings OneUI 8.5 for several devices. Feel free to contribute!
+
 ### Project Aim
 
 To create a universal, hassle-free ROM modification solution that will auto patch any samsung firmware and create a flashable zip.
 
-![Logo](readme/astro_banner.png)
+![Logo](readme/spidergirl_banner.jpg)
 
 <p align="center">
   <a href="https://github.com/SameerAlSahab/ProjectAstro/blob/main/LICENSE"><img src="https://img.shields.io/github/license/SameerAlSahab/ProjectAstro?style=for-the-badge&logo=github"/></a>
@@ -26,7 +30,7 @@ To create a universal, hassle-free ROM modification solution that will auto patc
 ## ✨ Features
 
 ###  AI
-- All AI features from Galaxy S25 Ultra
+- All AI features from Galaxy S26 Ultra
 
 ### Misc
 - All flagship features 
@@ -40,11 +44,9 @@ To create a universal, hassle-free ROM modification solution that will auto patc
 - Official status in device information
 - Heavily debloated
 - Bluetooth library patched
-- Smart Manager China
 - Samsung encryption removed
 - Fixed Knox apps (Secure Folder,Secure WiFi,Private Share,Health etc)
 - Fixed samsung wearables 
-- Inbuilt PUI theme 
 - Disabled secure screenshot detection
 - Fixed SmartView
 - Unlimited google photos storage with original quality 
@@ -55,7 +57,6 @@ To create a universal, hassle-free ROM modification solution that will auto patc
 - Network speed Meter
 - AppLock support
 - Data usage display on notification shade
-- Firewall
 - App blocker and permission manager
 - AltZlife
 - Native call recording

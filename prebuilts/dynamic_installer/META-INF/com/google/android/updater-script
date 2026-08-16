@@ -6,9 +6,11 @@ setdefault   extraction_speed     default
 ui_print " "
 ui_print "Welcome to AstroROM Installer!"
 ui_print " "
-ui_print "AstroROM  __ROM_VERSION__  for __MODEL_NAME__  "
+ui_print "SpiderGirl OS  __ROM_VERSION__  for __MODEL_NAME__  "
 ui_print " "
 ui_print "AstroROM is coded by @SameerAlSahab "
+ui_print " "
+ui_print "SpiderGirl OS is developed by @mehedihjoy0 "
 ui_print " "
 ui_print "Build: __BUILD_DATE__"
 
@@ -34,7 +36,7 @@ fi
 
 __EXTRA_ASSERTS__
 
-   ui_print "AstroROM successfully installed."
+   ui_print "SpiderGirl OS successfully installed."
 
 
 # Ending
